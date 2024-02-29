@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "xhash": "cpp",
+        "vector": "cpp",
+        "cmath": "cpp",
+        "ostream": "cpp",
+        "xstring": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "xiosbase": "cpp",
+        "iosfwd": "cpp",
+        "ios": "cpp",
+        "list": "cpp",
+        "utility": "cpp",
+        "xutility": "cpp",
+        "unordered_set": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
+}
