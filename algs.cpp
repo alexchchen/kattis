@@ -27,6 +27,48 @@ using namespace std;
 const double pi = 3.14159265358979323846;
 
 /**
+ * Disjoint-set / union-find data struture
+ */
+struct UF {
+    vector<int> v;
+    
+    UF(int n) : v(n, -1) {}
+    
+    bool sameSet(int a, int b) {
+        return find(a) == find(b);
+    }
+
+    int size(int x) {
+        return -v[find(x)];
+    }
+
+    int find(int x) {
+        if (v[x] < 0) {
+            return x;
+        } else {
+            return v[x] = find(v[x]);
+        }
+    }
+
+    bool join(int a, int b) {
+        a = find(a);
+        b = find(b);
+        
+        if (a == b) {
+            return false;
+        }
+
+        if (v[a] > v[b]) {
+            swap(a, b);
+        }
+        v[a] += v[b];
+        v[b] = a;
+
+        return true;
+    }
+};
+
+/**
  * Breadth-First Search
  * Traversal of a graph by visiting all adjacent vertices first.
  * 
