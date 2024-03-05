@@ -44,13 +44,8 @@ public:
     }
     
     void make_set(int v) {
-        if (v < parent.size()) {
-            parent[v] = v;
-            size[v] = 1;
-        } else {
-            parent.push_back(v);
-            size.push_back(1);
-        }
+        parent[v] = v;
+        size[v] = 1;
     }
 
     int find_set(int v) {
