@@ -27,6 +27,21 @@ using namespace std;
 const double pi = 3.14159265358979323846;
 
 /**
+ * Custom comparator for pair<int, int> in priority_queue.
+ * Top of the heap is largest first element (if equal then largest second element).
+ */
+class Compare {
+public:
+    bool operator()(pair<int, int> a, pair<int, int> b) {
+        if (a.first == b.first) {
+            return a.second < b.second;
+        }
+        return a.first < b.first;
+    }
+};
+priority_queue<pair<int, int>, vector<pair<int, int>>, Compare> pq;
+
+/**
  * Union-find disjoint set data struture
  */
 class UF {
